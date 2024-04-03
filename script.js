@@ -55,9 +55,11 @@ function getData() {
         <p >${ele.selectvalue}</p>
         </div>
         <div>
-        <p   class=" entries ${ele.selectvalue}">${ele.amountValue}</p>
+        <p class=" entries ${ele.selectvalue}"><span>${(ele.selectvalue == "income" ? "+" : "-") }</span>${ele.amountValue}</p>
         </div>
         `;
+
+        
   });
   console.log(incomeSum);
   console.log(expenseSum);
@@ -100,12 +102,19 @@ btn.addEventListener("click", () => {
   let selectvalue = selectIncomeOption.value;
   let descriptionValue = description.value;
 
+  if (description.value == "") {
+    console.log("inside amount value");
+    alert("Add Some Description");
+    return false;
+  }
+
   if (amount.value == "") {
     console.log("inside amount value");
     alert("Please enter an amount");
     return false;
   }
-
+  
+ 
   let amountValue = parseInt(amount.value);
 
   console.log(amountValue);
@@ -191,3 +200,8 @@ window.onload = () => {
   rightContainer.append(chart);
   aiContainer.style.display = "none";
 };
+
+
+tax.addEventListener('click' , ()=>{
+  window.location.href = "./tax.html";
+})
