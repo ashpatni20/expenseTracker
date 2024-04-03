@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h2>Expense Tracker</h2>
+    <div id="buttonSection">
+      <button type="button" id="home">Home</button>
+      <button type="button" id="ai">AI</button>
+      <button type="button" id="chartbtn">Chart</button>
+      <button type="button" id="tax">Tax</button>
+    </div>
+
+    <div class="mainContainer">
+      <div id="leftContainer">
+        <div id="income_container">
+          <p class="totalIncomeCardContainer">Total Balance <br /><span id="totalIncome"></span></p>
+          <p class="incomeCardContainer">Income <br/><span id="income"></span></p>
+          <p class="expenseCardContainer">Expense <br/><span id="expense"></span></p>
+        </div>
+        <p id="aiprompt"></p>
+
+        <div id="incomeInput">
+          <select name="" id="selectIncomeOption">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <br />
+          <input
+            type="text"
+            name=""
+            id="description"
+            placeholder="Description"
+          />
+          <br />
+          <input type="number" name="" id="amount" placeholder="0.00" />
+          <br />
+
+          <button type="submit" id="submit">SUBMIT</button>
+        </div>
+
+        <div id="transcationContainer">
+          <h3><span id="transactionChecker">No </span>Transactions </h3>
+          <div id="numberOfTransactions"></div>
+        </div>
+      </div>
+
+      <div id="rightContainer"></div>
+    </div>
+    <div class="chartContainer">
+        <div id="chart">
+            <canvas id="myChart"></canvas>
+          </div>
+    </div>
+
+
+    <div id="aiContainer">
+      <div id="middleContainer"></div>
+      <textarea name="" id="geminiInput" cols="100" rows="10"></textarea>
+      <button id="geminiButton">Submit</button>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
