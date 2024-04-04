@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,56 +9,97 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
     <h2>Calculate and Pay tax</h2>
     <div id="buttonSection">
         <button type="button" id="home">Home</button>
-      </div>
+    </div>
 
-      <div class="mainContainer">
-        <h4>Total Income: </h4>
+    <div class="taxMainContainer">
+        <h4>Total Income: <span id="totalIncomeContainer"></span></h4>
+        <!-- <br> -->
         <h4>Tax Rate: </h4>
+        <!-- <br> -->
+
         <div id="taxReturn">
             <table>
                 <tr>
                     <th>Income Thresold</th>
-                    <th>Income Tax Return</th>
+                    <th>Tax Rate </th>
                 </tr>
                 <tr>
-                    <td>Row 1, Column 1</td>
-                    <td>Row 1, Column 2</td>
+                    <td>Income above &#x20B9;1000000.00</td>
+                    <td>20%</td>
                 </tr>
                 <tr>
-                    <td>Row 2, Column 1</td>
-                    <td>Row 2, Column 2</td>
+                    <td>Income above &#x20B9;700000.00</td>
+                    <td>15%</td>
                 </tr>
                 <tr>
-                    <td>Row 3, Column 1</td>
-                    <td>Row 3, Column 2</td>
+                    <td>Income above &#x20B9;500000.00</td>
+                    <td>10%</td>
                 </tr>
                 <tr>
-                    <td>Row 4, Column 1</td>
-                    <td>Row 4, Column 2</td>
+                    <td>Income above &#x20B9;300000.00</td>
+                    <td>5%</td>
                 </tr>
-                <tr>
-                    <td>Row 5, Column 1</td>
-                    <td>Row 5, Column 2</td>
-                </tr>
-            </table>
+            </table>
+
+            <button id="calcTaxAmount">Calculate Tax</button>
+            <p>Tax to Pay : <span id="taxAmmount"></span></p>
+            <p>Ammount left after tax: <span id="leftOver"></span></p>
+
+            <!-- <button id="payNow">Pay Now</button> -->
+            <button id="rzp-button1">Pay Now</button>
         </div>
-      </div>
 
 
-      <script src="script.js"></script>
-      <script>
-        let home = document.getElementById("home");
-        home.addEventListener('click', ()=>{
-            window.location.href = "./index.html"
-        })
-      </script>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="./tax.js"></script>
+    <script>
+        // const calcTaxAmount = document.getElementById("calcTaxAmount");
+        // const taxAmmount = document.getElementById("taxAmmount");
+        // const totalIncomeContainer = document.getElementById("totalIncomeContainer");
+        // const leftOver = document.getElementById("leftOver");
+        // let home = document.getElementById("home");
+        // const payNow = document.getElementById("payNow");
+
+        // calcTaxAmount.addEventListener('click', () => {
+        //     calciAmt();
+        // })
+
+        // const calciAmt = () => {
+        //     let incomeSum = parseInt(localStorage.getItem("incomeSum")) || 0;
+        //     totalIncomeContainer.innerHTML = incomeSum
+        //     console.log(incomeSum);
+
+        //     let taxToPay = (incomeSum >= 40000) ? (incomeSum * 20) / 100 : ((incomeSum >= 30000) ? (incomeSum *
+        //             15) / 100 :
+        //         ((incomeSum >= 20000) ? (incomeSum * 10) / 100 : ((incomeSum >= 10000) ? (incomeSum * 5) /
+        //             100 : 0)));
+
+        //     taxAmmount.innerHTML = taxToPay;
+        //     leftOver.innerHTML = incomeSum - taxToPay;
+        // }
+
+        // calciAmt();
+
+        // home.addEventListener('click', () => {
+        //     window.location.href = "./index.html"
+        // })
+
+
+
+        // console.log(taxToPay);
+    </script>
 </body>
+
 </html>

@@ -32,14 +32,14 @@ function getData() {
   let incomeSum = 0;
   let expenseSum = 0;
 
-  if(transactionsArr.length == 0){
+  if (transactionsArr.length == 0) {
     console.log("empty");
-    document.getElementById('transactionChecker').style.display='block';
-  }else{
-    document.getElementById('transactionChecker').style.display='none';
+    document.getElementById("transactionChecker").style.display = "block";
+  } else {
+    document.getElementById("transactionChecker").style.display = "none";
   }
-  
-//   console.log(transactionsArr);
+
+  //   console.log(transactionsArr);
 
   transactionsArr.forEach((ele) => {
     if (ele.selectvalue === "income") {
@@ -55,13 +55,14 @@ function getData() {
         <p >${ele.selectvalue}</p>
         </div>
         <div>
-        <p class=" entries ${ele.selectvalue}"><span>${(ele.selectvalue == "income" ? "+" : "-") }</span>${ele.amountValue}</p>
+        <p class=" entries ${ele.selectvalue}"><span>${
+      ele.selectvalue == "income" ? "+" : "-"
+    }</span>${ele.amountValue}</p>
         </div>
         `;
-
-        
   });
   console.log(incomeSum);
+  localStorage.setItem("incomeSum", incomeSum);
   console.log(expenseSum);
 
   totalBalance = incomeSum - expenseSum;
@@ -113,8 +114,7 @@ btn.addEventListener("click", () => {
     alert("Please enter an amount");
     return false;
   }
-  
- 
+
   let amountValue = parseInt(amount.value);
 
   console.log(amountValue);
@@ -201,7 +201,6 @@ window.onload = () => {
   aiContainer.style.display = "none";
 };
 
-
-tax.addEventListener('click' , ()=>{
+tax.addEventListener("click", () => {
   window.location.href = "./tax.html";
-})
+});
