@@ -43,17 +43,17 @@ console.log(taxToPay);
 
 var options = {
   key: "rzp_test_fOqmASUXt5fJSs", // Enter the Key ID generated from the Dashboard
-  amount: "taxToPay", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+  amount: taxToPay, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
   currency: "INR",
   name: "Acme Corp", //your business name
   description: "Test Transaction",
   image: "https://example.com/your_logo",
-  order_id: "order_NuSMb56yoj7ji7", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-  handler: function (response) {
-    alert(response.razorpay_payment_id);
-    alert(response.razorpay_order_id);
-    alert(response.razorpay_signature);
-  },
+ // order_id: "order_NuSMb56yoj7ji7", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+  // handler: function (response) {
+  //   alert(response.razorpay_payment_id);
+  //   alert(response.razorpay_order_id);
+  //   alert(response.razorpay_signature);
+  // },
   callback_url: "https://eneqd3r9zrjok.x.pipedream.net/",
   prefill: {
     //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
