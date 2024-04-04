@@ -43,7 +43,7 @@ console.log(taxToPay);
 
 var options = {
   key: "rzp_test_fOqmASUXt5fJSs", // Enter the Key ID generated from the Dashboard
-  amount: taxToPay*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+  amount: Number(taxToPay)*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
   currency: "INR",
   name: "Acme Corp", //your business name
   description: "Test Transaction",
