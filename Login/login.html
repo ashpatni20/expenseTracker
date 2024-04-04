@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="../index.html" name="loginForm" id="lForm" onsubmit="return validate()">
+        <h1>Login Here</h1>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="gmail" class="inputElements">
+        <br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="pass" class="inputElements">
+        <br>
+
+        <div class="allBtnsDiv">
+            <input type="submit" value="Login" id="submit" class="allBtns">
+            <input type="button" value="Sign Up" id="signUp" class="allBtns">
+        </div>
+
+    </form>
+
+    <script>
+        document.getElementById("signUp").addEventListener('click', () => {
+            window.location.href = "./register.html";
+            // return;
+        })
+
+        let user = JSON.parse(localStorage.getItem("user"));
+        console.log(user);
+
+
+        const validate = () => {
+            console.log("in");
+
+            if (user == null) {
+                return false;
+            }
+
+            let email = document.forms["loginForm"]["email"].value;
+            let password = document.forms["loginForm"]["password"].value;
+            console.log(email, password);
+
+            if (email == "") {
+                alert("Please enter the email");
+                return false;
+            }
+            if (password == "") {
+                alert("Please enter the password");
+                return false;
+            }
+
+            let currUser;
+            let verify = user.some(person => {
+                if (person.gmail == email && person.pass == password) {
+                    console.log(person);
+                    currUser = person;
+                    alert('Logged in successfully');
+                    console.log(currUser);
+                    currUser = JSON.stringify(currUser);
+                    localStorage.setItem("currUser", currUser);
+                    return true;
+                } else {
+                    return false;
+                }
+
+            });
+
+            console.log(verify);
+
+            if (verify) {
+                return true;
+            } else {
+                alert('user not found');
+                return false;
+            }
+        }
+    </script>
+
+    // <script type="module" src="./script.js"></script>
+</body>
+
+</html>

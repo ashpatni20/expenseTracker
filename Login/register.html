@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&family=Assistant:wght@200..800&family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Signika:wght@300..700&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap"
+        rel="stylesheet">
+    <title>Register</title>
+</head>
+
+<body>
+
+    <form action="./login.html" name="regForm" id="form" onsubmit="return validate()">
+
+        <h1>Sign Up</h1>
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" id="fName" class="inputElements">
+        <br>
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" id="lName" class="inputElements">
+        <br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="gmail" class="inputElements">
+        <br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="pass" class="inputElements">
+        <br>
+        <label for="cPassword">Confirm Password</label><br>
+        <input type="password" name="cPassword" id="cPass" class="inputElements">
+        <br>
+
+        <div class="allBtnsDiv">
+            <input type="submit" value="REGISTER" id="submit" class="allBtns">
+            <input type="button" value="LOGIN" onclick="location.href='login.html'" class="allBtns">
+
+        </div>
+
+    </form>
+
+
+    <script src=" ./script.js"> </script>
+</body>
+
+</html>
