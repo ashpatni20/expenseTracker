@@ -25,7 +25,9 @@ To install Expense Tracker locally, follow these steps:
 
 1. Clone the repository:
 
-git clone https://github.com/ashpatni20/expenseTracker
+```bash
+   git clone https://github.com/SwarajAnand/localStorageForm.git
+   ```
 
 
 ## Usage
